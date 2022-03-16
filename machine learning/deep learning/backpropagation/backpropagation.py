@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class NeuralNetworkDesign():
-    # Constructor
+class backpropagation():
+    #contructor
     def __init__(self, inputLsize, hiddenLsize, outputLsize, learningRate):
         self.inputLsize = inputLsize
         self.hiddenLsize = hiddenLsize
@@ -12,7 +12,7 @@ class NeuralNetworkDesign():
         self.learningRate = learningRate
         self.loss = 0
         self.lossArr = []
-    
+
     # sigmoid function
     def sigmoid (self, x):
         return 1 / (1 + np.exp(-x))
@@ -58,16 +58,18 @@ class NeuralNetworkDesign():
             self.loss = 0     
             
 if __name__ == "__main__":
-    data = np.loadtxt("/Users/jaewanpark/Documents/jaewan/project/machine learning/deep learning/training.txt") 
+    data = np.loadtxt("/Users/jaewanpark/Documents/jaewan/developing/machine learning/deep learning/backpropagation/training.txt") 
     x = data[:, 0:2]
     t = data[:, 2:3]
-
+    
     epoch = 30
     batch_size = 1
     
-    nnd = NeuralNetworkDesign(2, 8, 1, 0.01)
+    nnd = backpropagation(2, 8, 1, 0.01)
     nnd.train(x, t, epoch, batch_size)
     
+    print(x.shape[0])
+
     plt.plot(range(epoch), nnd.lossArr)
     plt.title('Neural Network Design')
     plt.xlabel('# Epoch')
