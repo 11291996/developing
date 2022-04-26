@@ -7,12 +7,12 @@ import spacy
 spacy_en = spacy.load('en_core_web_sm')
 #german module from news
 spacy_de = spacy.load('de_core_news_sm')
-#distinguishing each word in the sentence
+#distinguishing each word in the sentence with the perspective of each language model
 tokenized = spacy_en.tokenizer('I am a student')
 #checking tokenization
 for i, token in enumerate(tokenized):
     print(f'index {i}: {token.text}')
-#defining tokenizing function for both enlgish and german 
+#defining tokenizing function for both english and german 
 def tokenize_de(text):
     return [token.text for token in spacy_de.tokenizer(text)]
 def tokenize_en(text):
@@ -27,7 +27,7 @@ TRG = Field(tokenize=tokenize_en, init_token="<sos>", eos_token="<eos>", lower=T
 from torchtext.datasets import Multi30k
 #use classmethod of torchtext, splits, to seperate the data
 train_dataset, valid_dataset, test_dataset = Multi30k.splits(exts=(".de", ".en"), fields=(SRC, TRG))
-#check the data size by created examples from splits()
+#check the data size by created examples from splits() and .examples method
 print(f"training dataset size: {len(train_dataset.examples)}")
 print(f"validation dataset: {len(valid_dataset.examples)}")
 print(f"testing dataset: {len(test_dataset.examples)}")
