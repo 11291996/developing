@@ -1,4 +1,5 @@
-python
+#python by Guidio Van Rossum
+#interpreting language
 
 #Values and data types
 x = None
@@ -14,16 +15,13 @@ g = {'a':None, True:1} #dictionary
 
 #Variables >> numbers letters and underscores 
 x, y
-print(object(s), sep=separator, end=end, file=file, flush=flush)
-#print a variable, file -> writing method, flush -> sees whether the outcome is true or false.
-type(c) #print the value type of the variable 
 ##Operators 
 #Arithmatic 
 1 + 3
 2 - 2
 3 * 4 
 7 / 2 
-2 % 1 #divide and returns reminder 
+5 % 2 #divide and returns reminder 
 4 ** 3 #exponetial 
 -11 // 3 #floor division 
 #Relational 
@@ -35,6 +33,7 @@ a != b #isnot
 <=
 #Assignment
 = 
+#In place operations
 += #a += b >> a = a + b 
 -= 
 /=
@@ -47,19 +46,32 @@ or
 not
 #Operator Precedence
 ** 
-~,+,- #complement and unary plus and minus
+~,+,- #complement and unary plus and minus, ~: negation of bit number
 *,/,%,//
-+, - #operators 
++, - #operators
+a & b #binary multiplication 
+a | b #binary summation with carry
+a ^ b #binary summation without carry
+>>, << #bit shifting  
 <=, >=, <, >
 ==, != 
-=, +=, -=, /=, %=, **=, //=
-is, is not #idnetity
+=, +=, -=, /=, %=, **=, //= 
+is, is not #identity
 in, not in #membership
 not, or, and #logical
+#Reserved words -> grammatical words
+assert #checks the conditions, continues if TRUE, or does not if FALSE
+del #deletes following object
+pass #passes the logic
+#Built-in functions -> already build in the language, C is used
+print(object(s), sep=separator, end=end, file=file, flush=flush)
+#print a variable, file -> writing method, flush -> sees whether the outcome is true or false.
+type(c) #print the value type of the variable 
 #Mathematical functions, built in 
 abs()
 round(x, n) #type(x)=float, n = nth round up
-#Math module, math.f()
+#Methods -> methods apply only for a certain class(libraries) -> look up oop, built with Python
+#Math module -> built-in standard library
 import math
 math.ceil(x) #round up
 math.factorial(x)
@@ -101,7 +113,7 @@ word[0:2] #does not include the last index
 word[::3] #step(starts from 0)
 word[3::-1] #default is [0, the last index + 1, 1]
 L = len(word) #shows the number of characters in the string
-#Functions 
+#Methods
 x.find(str) #determines str is in x or not 
 x.count(str) #counts how many times does str repeats in x 
 x.lower()
@@ -111,21 +123,21 @@ x.replace(old, new) #relaces old characters in the string to new
 x.startswith(str) #determines whether x begins with str
 x.endswith(str) #vice a versa 
 x.isalpha() #does x contain only alphabet
-x.isnumeric() #dodes x contain only numeric value
+x.isnumeric() #does x contain only numeric value
 x.isalnum() #does x contain both numeric and alphabet 
 
 a = 'a' + 'b' #this is possible. One can add variables between strings. 
 
-#mutable >> idependent class(index changing occurs)
-#immutable >> index replacing is impossible, but function might work
-#String is immutable 
+#mutable >> idependent class(index changing occurs) -> data structure with multiple address
+#immutable >> index replacing is impossible, but function might work, data structure with single address
+#String is immutable
 '\n' #next line
 '\r' #carriage return and inserts 
 '\t' #tab
 
 #List >> mutable
-list() >> #only one object available 
-[] >> #or this
+list() #only one object available 
+[] #or this
 #indexing and slicing are similar 
 a = list('cat')
 #positive numbers are from left to right. negative numbers are from right to left. starting at 0 and -1 excluding.
@@ -184,7 +196,7 @@ x.count(value)
 dict()
 #it can use a list of two-item tuples, lists and two character strings as input
 #accessing value in dictionary
-a = ['12', '24', '56'] #keys cannot be repeated 
+a = ['12', '24', '56'] #keys cannot be repeated. -> Key:Value
 d = dict(a)
 d['1']
 #adding new key and value
@@ -293,8 +305,8 @@ while sum <= maxsum:
     sum += i
 print('The sequence is:', list(range(1, i + 1)))
 
-#Loop control statement 
-break #a statement that terminates the loop and transfers to the next loop 
+#Loop control
+break #a reserved that terminates the loop and transfers to the next loop 
 
 var = 10 
 while var > 0:
@@ -303,7 +315,7 @@ while var > 0:
     if var == 5: 
         break
 
-continue #passes a control flow
+continue #passes a control flow, a reserved word
 
 for i in 'python':
     if i == 'p':
@@ -326,6 +338,7 @@ letter_counts = {letter:word.count(letter) for letter in set(word)}
 def function(var, ): #creating one's own function. Variable can follow order or assigned (var = x).
     return argument #function concludes as the argument, can be assigned as well.
 
+class #creates a class
 
-
-class #creating a class 
+#Tenary operators -> returns value1 if condition holds and if else returns value2 
+value1 if condition else value2

@@ -24,9 +24,10 @@ class myfunctions:
         for element in sequence:
             yield i , element #yield -> uses single memory address in a generator
             i += 1
-    def my_max(*args): #*arg -> meta data for tuples, **kwargs -> meta data for dictionaries. Following words after the stars is not important.
-        return sorted(*args)
-
+    def my_max(*args): 
+        return
+    #*args -> packing inputs and unpacking in front of lists and tuples  
+    #**kwargs -> packing and unpacking dictionaries
     def my_min(*args):
         pass
             
